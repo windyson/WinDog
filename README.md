@@ -43,12 +43,25 @@ https://qt.gtimg.cn/q=sh600031
 历史行情数据及行业分类等从tushare获取，请用户自行申请访问token
 https://tushare.pro/
 
-#### 安装教程
+#### 环境安装
 
-1.  安装MySQL数据库，版本5.6以上即可，创建yunbo数据库，导入数据库脚本；
-2.  安装jdk1.8（或者jre1.8）及以上版本，配置好JAVA_HOME环境变量；
-3.  安装python3.9及以上版本，安装如下所需的包。
-4.  可选安装redis5。
+1.  安装jdk1.8（或者jre1.8）及以上版本，配置好JAVA_HOME环境变量；
+2.  安装MySQL数据库，版本5.6以上即可，创建windog数据库；
+3.  执行windog.sql脚本创建数据库对象；
+4.  执行init.sql脚本导入基础数据；
+5.  安装python3.9及以上版本，安装如下所需的包：
+6.  安装python引用的包：
+7.  安装python引用的包：
+8.  可选安装redis5（该版本性能已经优化，可以不安装）。
+
+#### 运行程序
+
+1.  从git上下载如下图文件及目录：
+![盈利分析](doc/first.jpg)
+2.  修改数据库配置文件application-prod.yml，如下图：
+![盈利分析](doc/second.jpg)
+3.  在程序主目录下执行java -jar WinDog-2.0.0.RELEASE.jar，如下图：
+![盈利分析](doc/third.jpg)
 
 #### 使用说明
 
