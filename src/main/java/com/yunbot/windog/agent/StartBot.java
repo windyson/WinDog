@@ -38,7 +38,7 @@ public class StartBot {
 
 //        StartBot.sendToWeixin("text", "[系统消息]  系统开始运行...");
         sendToWeixinMD(MsgUtils.getNormalInfo("系统信息","系统已经启动"));
-        logger.info("YunBot is running...");
+        logger.info("WinDog is running...");
 
         gs_dburl = DBConfig.getUrl();
         if (("".equals(gs_dburl))) {
