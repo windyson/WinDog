@@ -25,9 +25,7 @@ import com.yunbot.windog.util.StringUtils;
 import com.google.gson.Gson;
 
 /**
- * 操作日志记录处理
- * @author fuce 
- * @date: 2018年9月30日 下午1:40:33
+ * @author William
  */
 @Aspect
 @Component

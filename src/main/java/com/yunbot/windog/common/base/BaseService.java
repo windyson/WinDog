@@ -3,13 +3,9 @@ package com.yunbot.windog.common.base;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 /**
- * 抽象类BaseService
-* @ClassName: BaseService
-* @Description: Service实现这个
-* @author fuce
-* @date 2018年6月3日
-*
+ * @author William
  */
+
 public interface BaseService<T,T2> {
 	
     int deleteByPrimaryKey(String id);

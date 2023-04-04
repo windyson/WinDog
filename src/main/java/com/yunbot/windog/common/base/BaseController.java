@@ -14,12 +14,10 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
 /**
- * web层通用数据处理
-* @ClassName: BaseController
-* @author fuce
-* @date 2018年8月18日
-*
+ /**
+ * @author William
  */
+
 @Controller
 public class BaseController
 {

@@ -4,11 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
-* bootstrap table list 返回封装model
-* @ClassName: TableSplitResult
-* @author fuce
-* @date 2019-09-08 03:59
-*/
+ * @author William
+ */
 public class TableSplitResult<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -7,11 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.shiro.web.filter.authz.RolesAuthorizationFilter;
 
 /**
- * 通过角色验证权限
- * @ClassName: ExtendRolesAuthorizationFilter
- * @author fuce
- * @date 2018年8月26日
- *
+ * @author William
  */
 public class ExtendRolesAuthorizationFilter  extends RolesAuthorizationFilter{
     

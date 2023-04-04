@@ -5,11 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 /**
- * 字典类型表
- * 
- * @author 一休
- * @email 438081243@qq.com
- * @date 2019-09-05 12:34:25
+ * @author William
  */
 public class TSysDictType implements Serializable {
 

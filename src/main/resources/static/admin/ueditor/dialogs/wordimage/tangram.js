@@ -18,8 +18,7 @@
 */
 
 /**
- * 声明baidu包
- * @author: allstar, erik, meizz, berg
+ * @author William
  */
 var T,
     baidu = T = baidu || {version: "1.5.0"};
@@ -826,23 +825,7 @@ baidu.object = baidu.object || {};
 
 
 /**
- * 将源对象的所有属性拷贝到目标对象中
- * @author erik
- * @name baidu.object.extend
- * @function
- * @grammar baidu.object.extend(target, source)
- * @param {Object} target 目标对象
- * @param {Object} source 源对象
- * @see baidu.array.merge
- * @remark
- * 
-1.目标对象中，与源对象key相同的成员将会被覆盖。<br>
-2.源对象的prototype成员不会拷贝。
-		
- * @shortcut extend
- * @meta standard
- *             
- * @returns {Object} 目标对象
+ * @author William
  */
 baidu.extend =
 baidu.object.extend = function (target, source) {
@@ -1215,11 +1198,7 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
 };
 
 /**
- * 通过请求一个图片的方式令服务器存储一条日志
- * @function
- * @grammar baidu.sio.log(url)
- * @param {string} url 要发送的地址.
- * @author: int08h,leeight
+ * @author William
  */
 baidu.sio.log = function(url) {
   var img = new Image(),
@@ -1238,14 +1217,8 @@ baidu.sio.log = function(url) {
 
 
 
-/*
- * Tangram
- * Copyright 2009 Baidu Inc. All rights reserved.
- * 
- * path: baidu/json.js
- * author: erik
- * version: 1.1.0
- * date: 2009/12/02
+/**
+ * @author William
  */
 
 
@@ -1254,14 +1227,8 @@ baidu.sio.log = function(url) {
  * @namespace baidu.json
  */
 baidu.json = baidu.json || {};
-/*
- * Tangram
- * Copyright 2009 Baidu Inc. All rights reserved.
- * 
- * path: baidu/json/parse.js
- * author: erik, berg
- * version: 1.2
- * date: 2009/11/23
+/**
+ * @author William
  */
 
 
@@ -1283,14 +1250,8 @@ baidu.json.parse = function (data) {
     //2010/12/09：更新至不使用原生parse，不检测用户输入是否正确
     return (new Function("return (" + data + ")"))();
 };
-/*
- * Tangram
- * Copyright 2009 Baidu Inc. All rights reserved.
- * 
- * path: baidu/json/decode.js
- * author: erik, cat
- * version: 1.3.4
- * date: 2010/12/23
+/**
+ * @author William
  */
 
 
@@ -1307,16 +1268,9 @@ baidu.json.parse = function (data) {
  * @returns {JSON} 解析结果json对象
  */
 baidu.json.decode = baidu.json.parse;
-/*
- * Tangram
- * Copyright 2009 Baidu Inc. All rights reserved.
- * 
- * path: baidu/json/stringify.js
- * author: erik
- * version: 1.1.0
- * date: 2010/01/11
+/**
+ * @author William
  */
-
 
 
 /**
@@ -1469,14 +1423,8 @@ baidu.json.stringify = (function () {
         }
     };
 })();
-/*
- * Tangram
- * Copyright 2009 Baidu Inc. All rights reserved.
- * 
- * path: baidu/json/encode.js
- * author: erik, cat
- * version: 1.3.4
- * date: 2010/12/23
+/**
+ * @author William
  */
 
 

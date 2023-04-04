@@ -22,12 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 身份校验核心类
- * 
- * @ClassName: MyShiroRealm
- * @author fuce
- * @date 2018年8月25日
- *
+ * @author William
  */
 @Service
 public class MyShiroRealm extends AuthorizingRealm {

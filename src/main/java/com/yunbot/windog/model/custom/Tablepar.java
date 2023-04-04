@@ -1,9 +1,7 @@
 package com.yunbot.windog.model.custom;
 
 /**
- * boostrap table post 参数
- * @author fc
- *
+ * @author William
  */
 public class Tablepar {
 	private int pageNum;//页码

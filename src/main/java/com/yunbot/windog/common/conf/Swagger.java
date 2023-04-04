@@ -12,12 +12,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
-* Swagger 配置文件
-* @ClassName: Swagger
-* @Description: 配置文件
-* @author fuce
-* @date 2018年6月3日
-*
+ * @author William
  */
 @Configuration(value="false")
 @EnableSwagger2 //启动swagger注解 启动服务，浏览器输入"http://服务名:8080/swagger-ui.html"

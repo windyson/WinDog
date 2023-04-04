@@ -1,11 +1,7 @@
 package com.yunbot.windog.model.custom;
 
 /**
- * 通用sql
-* @ClassName: SQLAdapter
-* @author fuce
-* @date 2019-09-02 01:10
-*
+ * @author William
  */
 public class SQLAdapter {
 	private String sql;
@@ -19,9 +15,7 @@ public class SQLAdapter {
 	}
 
 	/**
-	 * @param sql
-	 * @author fuce
-	 * @Date 2019年8月31日 下午7:25:22
+	 * @author William
 	 */
 	public SQLAdapter(String sql) {
 		super();

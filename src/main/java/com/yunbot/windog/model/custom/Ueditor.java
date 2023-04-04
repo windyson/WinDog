@@ -1,10 +1,6 @@
 package com.yunbot.windog.model.custom;
 /**
- * 百度编辑器
-* @ClassName: Ueditor
-* @author fuce
-* @date 2019-09-02 01:09
-*
+ * @author William
  */
 public class Ueditor {
 	private String state;

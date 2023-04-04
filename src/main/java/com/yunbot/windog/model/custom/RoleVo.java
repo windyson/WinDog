@@ -3,9 +3,7 @@ package com.yunbot.windog.model.custom;
 import com.yunbot.windog.model.auto.TsysRole;
 
 /**
- * 角色自定义数据
- * @author fuce 
- * @date: 2018年9月8日 上午12:18:59
+ * @author William
  */
 public class RoleVo extends TsysRole{
 	private static final long serialVersionUID = 1L;
