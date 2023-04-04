@@ -30,7 +30,7 @@ server :
   port : 8008
   ssl:
     protocol: TLS
-    key-store: winbot.keystore
+    key-store: windog.keystore
     key-store-password: changeit
     key-store-type: JKS
 
