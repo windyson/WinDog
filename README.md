@@ -37,8 +37,8 @@
 ![盈利分析](doc/myplot.png)
 
 #### 实时行情
-通过腾讯接口获取实
-https://qt.gtimg.cn
+通过腾讯接口获取实，如：
+https://qt.gtimg.cn/q=sh600031
 
 #### 安装教程
 
