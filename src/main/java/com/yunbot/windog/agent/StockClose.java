@@ -269,7 +269,7 @@ public class StockClose {
             logger.error("Get KPI result is error!");
         }
         smailMsg.append("</table></body></html>");
-        if (autoReplyMail("william@aishiner.com", smailMsg.toString())) {
+        if (autoReplyMail("your@your.com", smailMsg.toString())) {
             logger.info("Send mail to administrotor successful.");
         } else {
             logger.error("Send mail to administrotor failed.");
@@ -286,7 +286,7 @@ public class StockClose {
             logger.error("Get hold stock list error!");
             //Logger.getLogger(StockData.class.getName()).log(Level.SEVERE, null, ex);
         }
-        StartBot.sendToWeixin("markdown", stock_hold);
+
         StartBot.sendToWeixinMD(MsgUtils.getStockInfo(stmt, bestUser));
 
         //////////////////////////////////

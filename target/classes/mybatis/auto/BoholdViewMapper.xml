@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunbot.windog.mapper.auto.BoholdViewMapper">
+  <resultMap id="BaseResultMap" type="com.yunbot.windog.model.auto.BoholdView">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="cname" jdbcType="VARCHAR" property="cname" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="top_price" jdbcType="DECIMAL" property="topPrice" />
+    <result column="cur_price" jdbcType="DECIMAL" property="curPrice" />
+    <result column="benefit" jdbcType="DECIMAL" property="benefit" />
+    <result column="cur_date" jdbcType="TIMESTAMP" property="curDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+<sql id="Base_Column_List">
+	  	  	      	uid,
+       	  	      	code,
+       	  	      	cname,
+       	  	      	amount,
+       	  	      	price,
+       	  	      	top_price,
+       	  	      	cur_price,
+       	  	      	benefit,
+       	  	    	  	cur_date
+       	</sql>
+  <select id="selectByExample" parameterType="com.yunbot.windog.model.auto.BoholdViewExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bot_hold_view
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.yunbot.windog.model.auto.BoholdViewExample">
+    delete from bot_hold_view
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  
+  <insert id="insert" parameterType="com.yunbot.windog.model.auto.BoholdView">
+    insert into bot_hold_view (
+      	  	       uid,
+       	  	       code,
+       	  	       cname,
+       	  	       amount,
+       	  	       price,
+       	  	       top_price,
+       	  	       cur_price,
+       	  	       benefit,
+       	  	    	  cur_date
+       	    )
+    values (
+	  	  	      	#{uid,jdbcType=INTEGER},
+       	  	      	#{code,jdbcType=VARCHAR},
+       	  	      	#{cname,jdbcType=VARCHAR},
+       	  	      	#{amount,jdbcType=INTEGER},
+       	  	      	#{price,jdbcType=DECIMAL},
+       	  	      	#{topPrice,jdbcType=DECIMAL},
+       	  	      	#{curPrice,jdbcType=DECIMAL},
+       	  	      	#{benefit,jdbcType=DECIMAL},
+       	  	    	  #{curDate,jdbcType=TIMESTAMP}
+       	    )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.yunbot.windog.model.auto.BoholdView">
+    insert into bot_hold_view
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+          
+      <if test="uid != null">
+        uid,
+      </if>
+      
+         
+      <if test="code != null">
+        code,
+      </if>
+      
+         
+      <if test="cname != null">
+        cname,
+      </if>
+      
+         
+      <if test="amount != null">
+        amount,
+      </if>
+      
+         
+      <if test="price != null">
+        price,
+      </if>
+      
+         
+      <if test="topPrice != null">
+        top_price,
+      </if>
+      
+         
+      <if test="curPrice != null">
+        cur_price,
+      </if>
+      
+         
+      <if test="benefit != null">
+        benefit,
+      </if>
+      
+         
+      <if test="curDate != null">
+        cur_date,
+      </if>
+      
+         </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+          <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+          <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+          <if test="cname != null">
+        #{cname,jdbcType=VARCHAR},
+      </if>
+          <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
+      </if>
+          <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+          <if test="topPrice != null">
+        #{topPrice,jdbcType=DECIMAL},
+      </if>
+          <if test="curPrice != null">
+        #{curPrice,jdbcType=DECIMAL},
+      </if>
+          <if test="benefit != null">
+        #{benefit,jdbcType=DECIMAL},
+      </if>
+          <if test="curDate != null">
+        #{curDate,jdbcType=TIMESTAMP},
+      </if>
+        </trim>
+  </insert>
+  
+  <select id="countByExample" parameterType="com.yunbot.windog.model.auto.BoholdViewExample" resultType="java.lang.Long">
+    select count(*) from bot_hold_view
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map">
+    update bot_hold_view
+    <set>
+          <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+          <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+          <if test="record.cname != null">
+        cname = #{record.cname,jdbcType=VARCHAR},
+      </if>
+          <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=INTEGER},
+      </if>
+          <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+          <if test="record.topPrice != null">
+        top_price = #{record.topPrice,jdbcType=DECIMAL},
+      </if>
+          <if test="record.curPrice != null">
+        cur_price = #{record.curPrice,jdbcType=DECIMAL},
+      </if>
+          <if test="record.benefit != null">
+        benefit = #{record.benefit,jdbcType=DECIMAL},
+      </if>
+          <if test="record.curDate != null">
+        cur_date = #{record.curDate,jdbcType=TIMESTAMP},
+      </if>
+         
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+  <update id="updateByExample" parameterType="map">
+    update bot_hold_view
+    set
+            	     	 uid = #{record.uid,jdbcType=INTEGER},
+    	         	     	 code = #{record.code,jdbcType=VARCHAR},
+    	         	     	 cname = #{record.cname,jdbcType=VARCHAR},
+    	         	     	 amount = #{record.amount,jdbcType=INTEGER},
+    	         	     	 price = #{record.price,jdbcType=DECIMAL},
+    	         	     	 top_price = #{record.topPrice,jdbcType=DECIMAL},
+    	         	     	 cur_price = #{record.curPrice,jdbcType=DECIMAL},
+    	         	     	 benefit = #{record.benefit,jdbcType=DECIMAL},
+    	         	     	 cur_date = #{record.curDate,jdbcType=TIMESTAMP}
+    	         <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+                                                  
+</mapper>

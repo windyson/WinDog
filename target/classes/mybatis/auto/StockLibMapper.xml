@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunbot.windog.mapper.auto.StockLibMapper">
+  <resultMap id="BaseResultMap" type="com.yunbot.windog.model.auto.StockLib">
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="insdt" jdbcType="VARCHAR" property="insdt" />
+    <result column="metric" jdbcType="VARCHAR" property="metric" />
+    <result column="val" jdbcType="INTEGER" property="val" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+<sql id="Base_Column_List">
+	  	  	      	sid,
+       	  	      	code,
+       	  	      	insdt,
+       	  	      	metric,
+       	  	    	  	val
+       	</sql>
+  <select id="selectByExample" parameterType="com.yunbot.windog.model.auto.StockLibExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from stock_lib
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from stock_lib
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from stock_lib
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunbot.windog.model.auto.StockLibExample">
+    delete from stock_lib
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  
+  <insert id="insert" parameterType="com.yunbot.windog.model.auto.StockLib">
+    insert into stock_lib (
+      	  	       sid,
+       	  	       code,
+       	  	       insdt,
+       	  	       metric,
+       	  	    	  val
+       	    )
+    values (
+	  	  	      	#{sid,jdbcType=INTEGER},
+       	  	      	#{code,jdbcType=VARCHAR},
+       	  	      	#{insdt,jdbcType=VARCHAR},
+       	  	      	#{metric,jdbcType=VARCHAR},
+       	  	    	  #{val,jdbcType=INTEGER}
+       	    )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.yunbot.windog.model.auto.StockLib">
+    insert into stock_lib
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+          
+      <if test="sid != null">
+        sid,
+      </if>
+      
+         
+      <if test="code != null">
+        code,
+      </if>
+      
+         
+      <if test="insdt != null">
+        insdt,
+      </if>
+      
+         
+      <if test="metric != null">
+        metric,
+      </if>
+      
+         
+      <if test="val != null">
+        val,
+      </if>
+      
+         </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+          <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+          <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+          <if test="insdt != null">
+        #{insdt,jdbcType=VARCHAR},
+      </if>
+          <if test="metric != null">
+        #{metric,jdbcType=VARCHAR},
+      </if>
+          <if test="val != null">
+        #{val,jdbcType=INTEGER},
+      </if>
+        </trim>
+  </insert>
+  
+  <select id="countByExample" parameterType="com.yunbot.windog.model.auto.StockLibExample" resultType="java.lang.Long">
+    select count(*) from stock_lib
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map">
+    update stock_lib
+    <set>
+          <if test="record.sid != null">
+        sid = #{record.sid,jdbcType=INTEGER},
+      </if>
+          <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+          <if test="record.insdt != null">
+        insdt = #{record.insdt,jdbcType=VARCHAR},
+      </if>
+          <if test="record.metric != null">
+        metric = #{record.metric,jdbcType=VARCHAR},
+      </if>
+          <if test="record.val != null">
+        val = #{record.val,jdbcType=INTEGER},
+      </if>
+         
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+  <update id="updateByExample" parameterType="map">
+    update stock_lib
+    set
+            	     	 sid = #{record.sid,jdbcType=INTEGER},
+    	         	     	 code = #{record.code,jdbcType=VARCHAR},
+    	         	     	 insdt = #{record.insdt,jdbcType=VARCHAR},
+    	         	     	 metric = #{record.metric,jdbcType=VARCHAR},
+    	         	     	 val = #{record.val,jdbcType=INTEGER}
+    	         <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+      <update id="updateByPrimaryKeySelective" parameterType="com.yunbot.windog.model.auto.StockLib">
+    update stock_lib
+    <set>
+                          <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+                      <if test="insdt != null">
+        insdt = #{insdt,jdbcType=VARCHAR},
+      </if>
+                      <if test="metric != null">
+        metric = #{metric,jdbcType=VARCHAR},
+      </if>
+                      <if test="val != null">
+        val = #{val,jdbcType=INTEGER},
+      </if>
+              </set>
+    where 
+            sid = #{sid,jdbcType=INTEGER}
+                                          
+  </update>
+
+      	      	   	      	   	      	   	      	   	      	
+
+  <update id="updateByPrimaryKey" parameterType="com.yunbot.windog.model.auto.StockLib">
+    update stock_lib
+    set 
+             	        	    	 			code = #{code,jdbcType=VARCHAR},
+		     	        	    	 			insdt = #{insdt,jdbcType=VARCHAR},
+		     	        	    	 			metric = #{metric,jdbcType=VARCHAR},
+		     	        	    	 			val = #{val,jdbcType=INTEGER}
+		     	        where 
+            sid = #{sid,jdbcType=INTEGER}
+                                            
+  </update>
+  
+                             
+</mapper>

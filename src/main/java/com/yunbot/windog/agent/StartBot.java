@@ -290,19 +290,6 @@ public class StartBot {
         }
     }
 
-    //发送信息到微信群
-    public static void sendToWeixin(String type, String msg) {
-        HashMap info = new HashMap();
-        info.put("content", msg + " [" + String.format("%tT", new Date()) + "]");
-        JSONObject res = new JSONObject();
-        res.put("msgtype", type);
-        res.put(type, info);
-//        logger.info(res.toString());
-        //云博
-//        sendPost("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=b3ccc1e2-1532-435c-bc19-e89fe593a027", res.toString());
-        //赢财
-//        HttpRequest.sendPost("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=de5ddf4d-7f8b-49e0-bc44-dbfd0332444d", res.toString());
-    }
 
     //markdown格式
     public static void sendToWeixinMD(String msg)  {
@@ -312,10 +299,8 @@ public class StartBot {
         reqBody.put("msgtype", "markdown");
         reqBody.put("markdown", markdown);
         reqBody.put("safe", 0);
-        //云博
-//        HttpRequest.sendPost("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=b3ccc1e2-1532-435c-bc19-e89fe593a027", reqBody.toString());
-        //赢财
-        HttpRequest.sendPost("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=de5ddf4d-7f8b-49e0-bc44-dbfd0332444d", reqBody.toString());
+        //赢多机器人企业微信群机器人地址，用用户自己的替换
+        //HttpRequest.sendPost("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=????????", reqBody.toString());
     }
 
     //执行外部python脚本

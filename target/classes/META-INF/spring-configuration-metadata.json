@@ -1,0 +1,148 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce",
+      "type": "com.yunbot.windog.common.conf.V2Config"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.DBConfig",
+      "name": "spring.datasource.druid.master",
+      "type": "com.yunbot.windog.common.conf.DBConfig"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.MybatisConfig",
+      "name": "spring.datasource.druid.master",
+      "sourceMethod": "masterDataSource()",
+      "type": "javax.sql.DataSource"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.MybatisConfig",
+      "name": "spring.datasource.druid.slave",
+      "sourceMethod": "slaveDataSource()",
+      "type": "javax.sql.DataSource"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.FileConfig",
+      "name": "spring.servlet.multipart",
+      "type": "com.yunbot.windog.common.conf.FileConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.copyright-year",
+      "description": "版权年份",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.default-base-dir",
+      "description": "上传路径",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.demo-enabled",
+      "description": "演示模式",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.email-account",
+      "description": "发送邮箱登录账号",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.email-password",
+      "description": "发送邮箱登录密码",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.email-port",
+      "description": "发送邮箱端口",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.email-receiver",
+      "description": "收件人",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.email-smtp",
+      "description": "邮箱发送smtp",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.isroot-dir",
+      "description": "开启存放静态文件夹后目录",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.isstatic",
+      "description": "是否开启 上传static",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.name",
+      "description": "项目名称",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.roll-verification",
+      "description": "滚动验证码",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.token",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.V2Config",
+      "name": "fuce.version",
+      "description": "版本",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.DBConfig",
+      "name": "spring.datasource.druid.master.ip",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.DBConfig",
+      "name": "spring.datasource.druid.master.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.DBConfig",
+      "name": "spring.datasource.druid.master.port",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.DBConfig",
+      "name": "spring.datasource.druid.master.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.DBConfig",
+      "name": "spring.datasource.druid.master.username",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.yunbot.windog.common.conf.FileConfig",
+      "name": "spring.servlet.multipart.max-file-size",
+      "description": "单个文件大小",
+      "type": "java.lang.String"
+    }
+  ]
+}
