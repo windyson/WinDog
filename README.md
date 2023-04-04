@@ -57,13 +57,13 @@ https://tushare.pro/
 #### 运行程序
 
 1.  从git上下载如下图文件及目录：
-![目录截图](doc/first.jpg)
+![目录截图](doc/111.png)
 2.  修改数据库配置文件application-prod.yml，如下图：
-![数据库配置截图](doc/second.jpg)
+![数据库配置截图](doc/222.png)
 3.  在程序主目录下执行java -jar WinDog-2.0.0.RELEASE.jar，如下图：
-![启动截图](doc/third.jpg)
+![启动截图](doc/333.png)
 4.  WinDog后端系统正常运行如下图：
-![运行截图](doc/forth.jpg)
+![运行截图](doc/444.png)
 
 #### 使用说明
 
