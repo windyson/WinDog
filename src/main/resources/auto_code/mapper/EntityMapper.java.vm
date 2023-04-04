@@ -1,0 +1,52 @@
+package ${globalConfig.parentPack}.mapper.auto;
+
+import ${globalConfig.parentPack}.model.auto.${TsysTables.tableModel};
+import ${globalConfig.parentPack}.model.auto.${TsysTables.tableModel}Example;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+
+/**
+ * ${TsysTables.tableComment} ${TsysTables.tableModel}Mapper
+ * @author ${globalConfig.author}_自动生成
+ * @email ${globalConfig.email}
+ * @date ${datetime}
+ */
+public interface ${TsysTables.tableModel}Mapper {
+   #set( $pklag = false)
+   #set( $pk_attrType = '')
+   #foreach ($column in $beanColumns)
+	   #if(${column.column_key} == 'PRI')
+	   	#set( $pklag = true )
+	   	#set( $pk_attrType=$column.attrType)
+	   #end
+   #end
+
+    long countByExample(${TsysTables.tableModel}Example example);
+
+    int deleteByExample(${TsysTables.tableModel}Example example);
+	#if(${pklag} == true)
+	
+    int deleteByPrimaryKey(${pk_attrType} id);
+	#end
+	
+    int insert(${TsysTables.tableModel} record);
+
+    int insertSelective(${TsysTables.tableModel} record);
+
+    List<${TsysTables.tableModel}> selectByExample(${TsysTables.tableModel}Example example);
+	#if(${pklag} == true)
+	
+    ${TsysTables.tableModel} selectByPrimaryKey(${pk_attrType} id);
+	#end
+	
+    int updateByExampleSelective(@Param("record") ${TsysTables.tableModel} record, @Param("example") ${TsysTables.tableModel}Example example);
+
+    int updateByExample(@Param("record") ${TsysTables.tableModel} record, @Param("example") ${TsysTables.tableModel}Example example); 
+	#if(${pklag} == true)
+	
+    int updateByPrimaryKeySelective(${TsysTables.tableModel} record);
+
+    int updateByPrimaryKey(${TsysTables.tableModel} record);
+  	#end
+  	
+}

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunbot.windog.mapper.auto.BouserBenefitMapper">
+  <resultMap id="BaseResultMap" type="com.yunbot.windog.model.auto.BouserBenefit">
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="nick" jdbcType="VARCHAR" property="nick" />
+    <result column="curdt" jdbcType="TIMESTAMP" property="curdt" />
+    <result column="days" jdbcType="INTEGER" property="days" />
+    <result column="benefit" jdbcType="DECIMAL" property="benefit" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+<sql id="Base_Column_List">
+	  	  	      	sid,
+       	  	      	uid,
+       	  	      	nick,
+       	  	      	curdt,
+       	  	      	days,
+       	  	    	  	benefit
+       	</sql>
+  <select id="selectByExample" parameterType="com.yunbot.windog.model.auto.BouserBenefitExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bot_profit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bot_profit
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bot_profit
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunbot.windog.model.auto.BouserBenefitExample">
+    delete from bot_profit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  
+  <insert id="insert" parameterType="com.yunbot.windog.model.auto.BouserBenefit">
+    insert into bot_profit (
+      	  	       sid,
+       	  	       uid,
+       	  	       nick,
+       	  	       curdt,
+       	  	       days,
+       	  	    	  benefit
+       	    )
+    values (
+	  	  	      	#{sid,jdbcType=INTEGER},
+       	  	      	#{uid,jdbcType=INTEGER},
+       	  	      	#{nick,jdbcType=VARCHAR},
+       	  	      	#{curdt,jdbcType=TIMESTAMP},
+       	  	      	#{days,jdbcType=INTEGER},
+       	  	    	  #{benefit,jdbcType=DECIMAL}
+       	    )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.yunbot.windog.model.auto.BouserBenefit">
+    insert into bot_profit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+          
+      <if test="sid != null">
+        sid,
+      </if>
+      
+         
+      <if test="uid != null">
+        uid,
+      </if>
+      
+         
+      <if test="nick != null">
+        nick,
+      </if>
+      
+         
+      <if test="curdt != null">
+        curdt,
+      </if>
+      
+         
+      <if test="days != null">
+        days,
+      </if>
+      
+         
+      <if test="benefit != null">
+        benefit,
+      </if>
+      
+         </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+          <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+          <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+          <if test="nick != null">
+        #{nick,jdbcType=VARCHAR},
+      </if>
+          <if test="curdt != null">
+        #{curdt,jdbcType=TIMESTAMP},
+      </if>
+          <if test="days != null">
+        #{days,jdbcType=INTEGER},
+      </if>
+          <if test="benefit != null">
+        #{benefit,jdbcType=DECIMAL},
+      </if>
+        </trim>
+  </insert>
+  
+  <select id="countByExample" parameterType="com.yunbot.windog.model.auto.BouserBenefitExample" resultType="java.lang.Long">
+    select count(*) from bot_profit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByExampleSelective" parameterType="map">
+    update bot_profit
+    <set>
+          <if test="record.sid != null">
+        sid = #{record.sid,jdbcType=INTEGER},
+      </if>
+          <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+          <if test="record.nick != null">
+        nick = #{record.nick,jdbcType=VARCHAR},
+      </if>
+          <if test="record.curdt != null">
+        curdt = #{record.curdt,jdbcType=TIMESTAMP},
+      </if>
+          <if test="record.days != null">
+        days = #{record.days,jdbcType=INTEGER},
+      </if>
+          <if test="record.benefit != null">
+        benefit = #{record.benefit,jdbcType=DECIMAL},
+      </if>
+         
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+  <update id="updateByExample" parameterType="map">
+    update bot_profit
+    set
+            	     	 sid = #{record.sid,jdbcType=INTEGER},
+    	         	     	 uid = #{record.uid,jdbcType=INTEGER},
+    	         	     	 nick = #{record.nick,jdbcType=VARCHAR},
+    	         	     	 curdt = #{record.curdt,jdbcType=TIMESTAMP},
+    	         	     	 days = #{record.days,jdbcType=INTEGER},
+    	         	     	 benefit = #{record.benefit,jdbcType=DECIMAL}
+    	         <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  
+  
+      <update id="updateByPrimaryKeySelective" parameterType="com.yunbot.windog.model.auto.BouserBenefit">
+    update bot_profit
+    <set>
+                          <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+                      <if test="nick != null">
+        nick = #{nick,jdbcType=VARCHAR},
+      </if>
+                      <if test="curdt != null">
+        curdt = #{curdt,jdbcType=TIMESTAMP},
+      </if>
+                      <if test="days != null">
+        days = #{days,jdbcType=INTEGER},
+      </if>
+                      <if test="benefit != null">
+        benefit = #{benefit,jdbcType=DECIMAL},
+      </if>
+              </set>
+    where 
+            sid = #{sid,jdbcType=INTEGER}
+                                                  
+  </update>
+
+      	      	   	      	   	      	   	      	   	      	   	      	
+
+  <update id="updateByPrimaryKey" parameterType="com.yunbot.windog.model.auto.BouserBenefit">
+    update bot_profit
+    set 
+             	        	    	 			uid = #{uid,jdbcType=INTEGER},
+		     	        	    	 			nick = #{nick,jdbcType=VARCHAR},
+		     	        	    	 			curdt = #{curdt,jdbcType=TIMESTAMP},
+		     	        	    	 			days = #{days,jdbcType=INTEGER},
+		     	        	    	 			benefit = #{benefit,jdbcType=DECIMAL}
+		     	        where 
+            sid = #{sid,jdbcType=INTEGER}
+                                                    
+  </update>
+  
+                                  
+</mapper>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="zh-CN">
+<head th:replace="admin/common/html/head :: head_Normal(~{::title},~{::link},~{::style})">
+
+    <title>WinDog量化</title>
+    <!--    oem-->
+    <!--    <title>灾备管理平台</title>-->
+    <!--<title th:text=${title}></title>-->
+
+    <!-- 这儿引用单独的css link -->
+    <link rel="stylesheet" th:href="@{/static/admin/assets/js/button/ladda/ladda.min.css}">
+    <style type="text/css">
+        /**
+        *这里写单独的css样式
+        */
+        body {
+            overflow-y: hidden!important;
+        }
+        #mainFrame{
+            height: calc(100vh - 135px);
+            overflow-x: hidden;
+            /*min-height: 800px;*/
+            /*height: calc(100vh + 35px);*/
+        }
+        .sb-init{
+            background: none;
+        }
+        .second-menu{
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body id="body">
+
+<!-- 顶部通用-->
+<div th:replace="admin/common/html/topMenu :: topMenu(${isribbon})">
+</div>
+<!-- 结束顶部通用 -->
+
+<!-- 左边菜单栏通用 -->
+<div th:replace="admin/common/html/leftMenu :: leftMenu">
+</div>
+<!-- 结束左边菜单栏通用 -->
+
+<!-- ###############################代码编写出############################### -->
+
+<!-- 右边内容 -->
+<div class="wrap-fluid">
+    <div>
+                        <iframe  width="100%"   id="mainFrame" name="mainFrame" th:src="@{'/ServiceController/view'}" frameborder="0" marginheight="0" marginwidth="0" border="false"  ></iframe>
+    </div>
+
+    <!-- 页脚 通用-->
+    <div th:replace="admin/common/html/footer :: footer">
+    </div>
+    <!-- 结束页脚通用 -->
+</div>
+<!-- 结束右边内容 -->
+
+<!-- ###############################代码编写出############################### -->
+
+<!-- 右侧隐藏滑块内容 -->
+<!--<div th:include="admin/common/html/rightHide :: rightHide">-->
+<!--</div>-->
+<!-- END 右侧隐藏滑块内容-->
+
+<!-- 通用js -->
+<div th:include="admin/common/html/js :: onload_js">
+</div>
+<script type="text/javascript" th:src="@{/static/admin/assets/js/toggle_close.js}"></script>
+<script type="text/javascript" th:src="@{/static/admin/assets/js/main.js?v=3}"></script>
+<!-- 弹窗 -->
+<script th:src="@{/static/admin/assets/js/layer/layer.js}" type="text/javascript"></script>
+<script>
+    function editOne() {
+        let width = 800;
+        let height = ($(window).height() - 50);
+        layer.open({
+            type: 2,
+            area: [width + "px", height + "px"],
+            fix: false,
+            maxmin: true,
+            shade: 0.3,
+            title: "编辑个人信息",
+            content: "/UserController/editOne"
+        })
+    }
+</script>
+</body>
+
+
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org" -->
+<!--      xmlns:sec="http://www.pollix.at/thymeleaf/shiro">-->
+<!--<head th:replace="admin/common/html/head :: head_Normal(~{::title},~{::link},~{::style})">-->
+
+<!--<title th:text=${title}></title>-->
+<!--&lt;!&ndash; 这儿引用单独的css link &ndash;&gt;-->
+<!--<link rel="stylesheet" th:href="@{/static/admin/assets/js/button/ladda/ladda.min.css}">-->
+<!--<style type="text/css">-->
+<!--/**-->
+<!--*这里写单独的css样式-->
+<!--*/-->
+
+<!--#mainFrame{-->
+<!--height: calc(100vh - 139px);overflow-x: hidden;-->
+<!--}-->
+<!--.second-menu{-->
+<!--    display: none;-->
+<!--}-->
+<!--</style>-->
+
+<!--</head>-->
+
+<!--<body id="body">-->
+
+<!--&lt;!&ndash; 顶部通用&ndash;&gt;-->
+<!--<div th:replace="admin/common/html/topMenu :: topMenu(${isribbon})">-->
+<!--</div>-->
+<!--&lt;!&ndash; 结束顶部通用 &ndash;&gt;-->
+<!--   -->
+<!--&lt;!&ndash; 左边菜单栏通用 &ndash;&gt;-->
+<!--<div th:replace="admin/common/html/leftMenu :: leftMenu">-->
+<!--</div>-->
+<!--&lt;!&ndash; 结束左边菜单栏通用 &ndash;&gt;-->
+
+<!--&lt;!&ndash; ###############################代码编写出############################### &ndash;&gt;-->
+
+<!--&lt;!&ndash; 右边内容 &ndash;&gt;-->
+<!--<div class="wrap-fluid">-->
+<!--     <div style="background-color: aliceblue;">-->
+<!--       <iframe  width="100%"   id="mainFrame" name="mainFrame" th:src="@{'/admin/main'}" frameborder="0" marginheight="0" marginwidth="0" border="false"  ></iframe>-->
+<!--  -->
+<!--     </div>-->
+<!--      -->
+<!--     &lt;!&ndash; 页脚 通用&ndash;&gt;-->
+<!--     <div th:replace="admin/common/html/footer :: footer">-->
+<!--     </div>-->
+<!--     &lt;!&ndash; 结束页脚通用 &ndash;&gt;-->
+<!--</div>-->
+<!--&lt;!&ndash; 结束右边内容 &ndash;&gt;-->
+
+<!--&lt;!&ndash; ###############################代码编写出############################### &ndash;&gt;-->
+
+<!--&lt;!&ndash; 右侧隐藏滑块内容 &ndash;&gt;-->
+<!--<div th:include="admin/common/html/rightHide :: rightHide">-->
+<!--</div>-->
+<!--   &lt;!&ndash; END 右侧隐藏滑块内容&ndash;&gt;-->
+
+<!--&lt;!&ndash; 通用js &ndash;&gt;-->
+<!--<div th:include="admin/common/html/js :: onload_js"> -->
+<!--</div>-->
+<!--<script type="text/javascript" th:src="@{/static/admin/assets/js/toggle_close.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/static/admin/assets/js/main.js?v=1}"></script>-->
+<!--</body>-->
+
+
+<!--</html>-->
