@@ -188,10 +188,11 @@ public class StockPolicy {
                         }
                         //只在开始时取一次
                         if (!policyEnable) {
+//                            logger.warn("-------------sfsdfsfdsdf-------------");
 //                            //更新日历
 //                            callPython("python.exe", System.getProperty("user.dir") + File.separator + "python" + File.separator + "yb_cal.py");
 //                            //更新日数据
-//                            callPython("python.exe", System.getProperty("user.dir") + File.separator + "python" + File.separator + "yb-daily.py");
+//                            callPython("python.exe", System.getProperty("user.dir") + File.separator + "python" + File.separator + "yb_daily.py");
                         }
                         //执行指标计算
                         logger.info("*****开始计算所有策略选股[" + iLoop + "]...");

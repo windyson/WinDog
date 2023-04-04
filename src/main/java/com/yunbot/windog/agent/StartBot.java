@@ -79,12 +79,40 @@ public class StartBot {
         Thread myPolicyThread = new Thread(startThread2);
         myPolicyThread.start();
 
+        //检查是否有机器人账户，没有则创建
+        initBotAccount();
+
         //启动机器人交易系统
         ExchangeThread ycBot = new ExchangeThread();
         Thread myBotThread;
         myBotThread = new Thread(ycBot);
         myBotThread.start();
+    }
 
+    //初始化机器人账户，初始化基础数据
+    public static boolean initBotAccount() {
+        MysqlObj stmt = new MysqlObj(gs_dburl, gs_user, gs_pwd, false);
+        try {
+            ResultSet ds_botinfo = stmt.executeQuery("select * from bot_info");
+            try {
+                if (ds_botinfo.next()) {
+                    return true;
+                }
+            } catch (SQLException ex) {
+                return false;
+            }
+            logger.warn("创建缺省机器人账户...");
+            SysDataInit.main(null);
+            logger.warn("获取交易日历...");
+            callPython("python.exe", System.getProperty("user.dir") + File.separator + "python" + File.separator + "yb_cal.py");
+            //更新日数据
+            logger.warn("获取股票日线基础数据...");
+            callPython("python.exe", System.getProperty("user.dir") + File.separator + "python" + File.separator + "yb_daily.py");
+
+            return true;
+        } finally {
+            stmt.close();
+        }
     }
 
     //今天是否为开盘日

@@ -32,7 +32,7 @@ class InitConfig(object):
         self.dic.update({'port': port})
         self.dic.update({'user': user})
         self.dic.update({'pwd': pwd})
-        self.dic.update({'url': 'mysql://%s:%s@%s:%s/yunbot?charset=utf8&use_unicode=1' % (user, pwd, ip, port)})
+        self.dic.update({'url': 'mysql://%s:%s@%s:%s/windog?charset=utf8&use_unicode=1' % (user, pwd, ip, port)})
 
         # 读取基本配置文件，获取令牌
         if 2 > len(os.path.dirname(sys.argv[0])):

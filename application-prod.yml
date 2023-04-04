@@ -8,7 +8,7 @@ spring:
     druid:
      #主库数据源
      master:
-        url: jdbc:mysql://127.0.0.1:3306/yunbot?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+        url: jdbc:mysql://127.0.0.1:3306/windog?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
         username: root
         password: welcome
         ip: 127.0.0.1
@@ -16,7 +16,7 @@ spring:
      #备数据源 #关闭
      slave:
         enabled: false
-        url: jdbc:mysql://127.0.0.1:3306/yunbot?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+        url: jdbc:mysql://127.0.0.1:3306/windog?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
         username: root
         password: welcome
         ip: 127.0.0.1

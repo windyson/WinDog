@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
     # # 打开数据库连接
     engine_ts = create_engine(conf['url'])
-    tsdb = MySQLdb.connect(conf['ip'], conf['user'], conf['pwd'], "yunbot", charset='utf8')
+    tsdb = MySQLdb.connect(conf['ip'], conf['user'], conf['pwd'], "windog", charset='utf8')
 
     df = pro.query('stock_basic', exchange='', list_status='L', fields='ts_code,name,industry')
     for index, row in df.iterrows():

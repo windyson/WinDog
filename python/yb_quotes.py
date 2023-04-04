@@ -227,7 +227,7 @@ if __name__ == '__main__':
 
     # 打开数据库连接
     engine_ts = create_engine(conf['url'])
-    tsdb = MySQLdb.connect(conf['ip'], conf['user'], conf['pwd'], "yunbot", charset='utf8')
+    tsdb = MySQLdb.connect(conf['ip'], conf['user'], conf['pwd'], "windog", charset='utf8')
 
     df = pd.read_sql("select * from stock_pool order by update_dt asc", engine_ts)
     # updateQuotesNetease(df)

@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
     # # 打开数据库连接
     engine_ts = create_engine(conf['url'])
-    tsdb = MySQLdb.connect(conf['ip'], conf['user'], conf['pwd'], "yunbot", charset='utf8')
+    tsdb = MySQLdb.connect(conf['ip'], conf['user'], conf['pwd'], "windog", charset='utf8')
 
     # 获取断点
     df = pd.read_sql(
@@ -110,7 +110,7 @@ if __name__ == '__main__':
         startdt = datetime.strptime(startdt, '%Y%m%d') + timedelta(days=+1)
         startdt = startdt.strftime('%Y%m%d')
     else:
-        startdt = "20220101"
+        startdt = "20230101"
     # 当前日期
     enddt = datetime.now().strftime('%Y%m%d')
 
