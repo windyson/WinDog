@@ -62,6 +62,8 @@ https://tushare.pro/
 ![盈利分析](doc/second.jpg)
 3.  在程序主目录下执行java -jar WinDog-2.0.0.RELEASE.jar，如下图：
 ![盈利分析](doc/third.jpg)
+4.  WinDog后端系统正常运行如下图：
+![盈利分析](doc/forth.jpg)
 
 #### 使用说明
 
