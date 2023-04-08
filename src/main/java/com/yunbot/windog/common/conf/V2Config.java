@@ -49,6 +49,17 @@ public class V2Config
     /** 滚动验证码 **/
     private static Boolean rollVerification;
     private static String token;
+    private static String wxrobot;
+
+	/** 令牌 **/
+	public static String getWxRobot() {
+		return wxrobot;
+	}
+
+	public void setWxRobot(String str) {
+		this.wxrobot = str;
+	}
+
 	/** 令牌 **/
     public static String getToken() {
     	return token;

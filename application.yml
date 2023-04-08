@@ -24,7 +24,9 @@ fuce:
   #漂亮得拖动验证码 默认false普通验证码、true滚动验证码
   rollVerification: true
   #tushare令牌
-  token: 38971d3a1c984329bbf977a24ecdaaef0a2dd2845d7caab7f6447ec2
+  token: ?????????????????????????????????????????
+  #微信企业机器人
+  wxrobot: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=????????
 #tomcat config
 server :
   port : 8008
@@ -82,17 +84,7 @@ spring :
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
-#mybatis:
-#  #配置mapper的扫描，找到所有的mapper.xml映射文件
-#  mapperLocations : classpath*:mybatis/*/*.xml
-#  #mybatis提供三种sql执行器，分别是SIMPLE、REUSE、BATCH。
-#  executor-type : reuse
-#  #搜索指定包别名
-#  typeAliasesPackage : com.*.model
-#  #该配置项就是指将带有下划线的表字段映射为驼峰格式的实体类属性。
-#  configuration :
-#    map-underscore-to-camel-case : true
-#pagehelper分页插件
+
 pagehelper:
 
     helperDialect: mysql

@@ -13,6 +13,7 @@ import java.util.List;
 import static mgrDaemon.SendMail.autoReplyMail;
 
 import com.yunbot.windog.common.conf.DBConfig;
+import com.yunbot.windog.common.conf.V2Config;
 import org.json.JSONObject;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
@@ -269,7 +270,7 @@ public class StockClose {
             logger.error("Get KPI result is error!");
         }
         smailMsg.append("</table></body></html>");
-        if (autoReplyMail("your@your.com", smailMsg.toString())) {
+        if (autoReplyMail(V2Config.getEmail_receiver(), smailMsg.toString())) {
             logger.info("Send mail to administrotor successful.");
         } else {
             logger.error("Send mail to administrotor failed.");

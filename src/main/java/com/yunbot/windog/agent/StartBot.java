@@ -328,7 +328,7 @@ public class StartBot {
         reqBody.put("markdown", markdown);
         reqBody.put("safe", 0);
         //赢多机器人企业微信群机器人地址，用用户自己的替换
-        //HttpRequest.sendPost("https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=????????", reqBody.toString());
+        HttpRequest.sendPost(V2Config.getWxRobot(), reqBody.toString());
     }
 
     //执行外部python脚本

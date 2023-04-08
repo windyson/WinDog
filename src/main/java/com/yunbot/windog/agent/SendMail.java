@@ -9,6 +9,8 @@ package mgrDaemon;
  *
  * @author william
  */
+import com.yunbot.windog.common.conf.V2Config;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -61,19 +63,19 @@ public class SendMail {
     }
 
     public static boolean autoReplyMail(String sto, String smsg) {
-//        try {
-//            SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//            String curtime = sd.format(new Date());
-//            SendMail.sendMessage("smtp.exmail.qq.com", "",
-//                    "", sto, "[赢多智能]-[" + curtime + "]",
-//                    "-----------[机器选股列表]-----------<br><br>" + smsg + "<br><br>免责声明<br>" + "-----------------<br><br>" +
-//    "本邮件仅呈现机器人深度学习的成果，并不构成任何投资建议或实际的投资操作。<br>我们不保证其中的观点和判断不会发生任何调整或变更，投资者据此发生的投资行为与本公司无关!",
-//                    "text/html;charset=gb2312");
-//        } catch (MessagingException e) {
-//            // TODO Auto-generated catch block
-//            //e.printStackTrace();
-//            return false;
-//        }
+        try {
+            SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String curtime = sd.format(new Date());
+            SendMail.sendMessage(V2Config.getEmail_smtp(), V2Config.getEmail_account(),
+                    V2Config.getEmail_password(), sto, "[赢多智能]-[" + curtime + "]",
+                    "-----------[机器选股列表]-----------<br><br>" + smsg + "<br><br>免责声明<br>" + "-----------------<br><br>" +
+    "本邮件仅呈现机器人深度学习的成果，并不构成任何投资建议或实际的投资操作。<br>我们不保证其中的观点和判断不会发生任何调整或变更，投资者据此发生的投资行为与本公司无关!",
+                    "text/html;charset=gb2312");
+        } catch (MessagingException e) {
+            // TODO Auto-generated catch block
+            //e.printStackTrace();
+            return false;
+        }
         return true;
     }
 
